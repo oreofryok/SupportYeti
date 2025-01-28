@@ -1,0 +1,396 @@
+/* General Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lexend', 'Nunito', 'Roboto', Arial, sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  max-width: 100%; /* Ensure body content stays within the viewport */
+  height: 100%; /* Ensure content stays within the viewport */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 70px; /* Slightly taller for better spacing */
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.95); /* Slight transparency when scrolled */
+}
+
+/* Logo Styles */
+.logo {
+  max-width: 200px; /* Adjusted for better proportions */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Menu Items */
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 25px; /* Increased gap for better spacing */
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  color: #ff3131;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.menu li a:hover {
+  color: #050a30;
+  background-color: rgba(255, 49, 49, 0.1);
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Active Link */
+.menu li a.active {
+  color: #050a30;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1000;
+  width: 600px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: grid;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown Items */
+.dropdown-menu li {
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Links Inside Dropdown */
+.dropdown-menu li a {
+  color: #333;
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Submenu Icon and Text */
+.dropdown-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.submenu-text span {
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+.submenu-text p {
+  font-size: 14px;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* CTA Button */
+.cta-button {
+  background: #ff3131;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: auto; /* Push the button to the right */
+}
+
+.cta-button:hover {
+  background: linear-gradient(90deg, #e02a2a, #ff3131);
+  box-shadow: 0 4px 10px rgba(255, 49, 49, 0.5);
+  transform: translateY(-2px); /* Lift effect */
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  margin-left: auto; /* Push hamburger to the right */
+}
+
+.hamburger span {
+  background-color: #ff3131;
+  height: 3px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 0 2rem;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevent overflow from animations */
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  max-width: 600px;
+  animation: fadeInLeft 1s ease-out; /* Fade-in animation */
+}
+
+.hero-content h1 {
+  font-size: 3rem; /* Larger font size for impact */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #003366;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.1rem; /* Slightly larger for readability */
+  margin-bottom: 30px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.hero-content .cta-button {
+  background: linear-gradient(90deg, #ff3131, #e02a2a);
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.hero-content .cta-button:hover {
+  background: linear-gradient(90deg, #e02a2a, #ff3131);
+  box-shadow: 0 4px 10px rgba(255, 49, 49, 0.5);
+  transform: translateY(-3px); /* Lift effect */
+}
+
+.hero-image {
+  width: 50%;
+  animation: fadeInRight 1s ease-out; /* Fade-in animation */
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Underline color for specific text */
+.hero-content u {
+  text-decoration-color: #ff3131;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .dropdown-menu li {
+    margin-bottom: 10px;
+  }
+
+  /* Adjust CTA button for mobile */
+  .cta-button {
+    margin: 10px 0; /* Add some margin for better spacing */
+    display: block; /* Make it full-width on mobile */
+    text-align: center;
+    width: 100%; /* Full width */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 1rem; /* Reduced padding for mobile */
+    text-align: center;
+    min-height: auto; /* Remove fixed height for better flexibility */
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    margin-bottom: 1rem; /* Reduced margin between content and image */
+    padding: 0 1rem; /* Added padding for better spacing */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem; /* Adjusted font size for mobile */
+    margin-bottom: 15px; /* Reduced margin */
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 20px; /* Reduced margin */
+  }
+
+  .hero-image {
+    width: 100%;
+    margin-top: 1rem; /* Reduced margin between content and image */
+  }
+
+  .hero-image img {
+    border-radius: 8px; /* Slightly smaller border radius for mobile */
+  }
+
+  .hero-content .cta-button {
+    width: 100%;
+    max-width: 300px; /* Limit button width for better appearance */
+    margin: 0 auto; /* Center the button */
+  }
+}

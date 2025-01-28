@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Yeti Hero Page</title>
+    <!-- Google Fonts Import -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Nunito:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+        <!-- Expertise Section Stylesheet -->
+    <link rel="stylesheet" href="expertise.css">
+
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <a href="/" class="logo-link">
+            <img src="logo.png" alt="Support Yeti Logo" class="logo">
+        </a>
+    </div>
+        <!-- Menu Items -->
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <!-- Industries Dropdown -->
+            <li class="dropdown industry">
+                <a href="#" class="dropdown-link">Industries</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">
+                            <div class="submenu-icon">
+                                <img src="icon1.png" alt="Real Estate Icon" class="dropdown-icon">
+                            </div>
+                            <div class="submenu-text">
+                                <span>Real Estate</span>
+                                <p>Manage your real estate transactions through our virtual transaction coordinators who help you with paperwork, documents, and cross-communication.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="submenu-icon">
+                                <img src="icon2.png" alt="Ecommerce Icon" class="dropdown-icon">
+                            </div>
+                            <div class="submenu-text">
+                                <span>Ecommerce & Retail</span>
+                                <p>Meet your customers where they are with a personalized journey that increases their brand loyalty.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="submenu-icon">
+                                <img src="icon3.png" alt="On-Demand Icon" class="dropdown-icon">
+                            </div>
+                            <div class="submenu-text">
+                                <span>On-Demand: Food, Personal, Transportation</span>
+                                <p>Build expert digital and live customer service to enhance the experience and empower instant requests.</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="submenu-icon">
+                                <img src="icon4.png" alt="SaaS Icon" class="dropdown-icon">
+                            </div>
+                            <div class="submenu-text">
+                                <span>SaaS & Software</span>
+                                <p>Exceed customer needs, expand your business opportunities, and create a strong brand in the market.</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Process</a></li>
+            <li><a href="https://www.linkedin.com/company/supportyeti/about/" target="_blank" rel="noopener noreferrer">About</a></li>
+            <li><a href="https://www.linkedin.com/company/supportyeti/jobs/" target="_blank" rel="noopener noreferrer">Career</a></li>
+        </ul>
+        <!-- Call to Action Button -->
+        <a href="/contact.html" class="cta-button">Let's talk</a>
+    </nav>
+
+
+
+
+
+
+
+
+
+    <script>
+      // Ensure dropdown is hidden on page load and add the toggle functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        // Initially hide all dropdown menus
+        dropdowns.forEach(function(dropdown) {
+          const menu = dropdown.querySelector('.dropdown-menu');
+          if (menu) menu.style.display = 'none';
+        });
+
+        // Toggle dropdown visibility on click
+        dropdowns.forEach(dropdown => {
+          dropdown.addEventListener('click', function (event) {
+            // Toggle the active class to show/hide the dropdown menu
+            const menu = this.querySelector('.dropdown-menu');
+            if (menu) {
+              menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+            }
+
+            // Close all other dropdowns when one is opened
+            dropdowns.forEach(otherDropdown => {
+              if (otherDropdown !== dropdown) {
+                const otherMenu = otherDropdown.querySelector('.dropdown-menu');
+                if (otherMenu) otherMenu.style.display = 'none';
+              }
+            });
+
+            // Prevent the click event from propagating to avoid closing the dropdown immediately
+            event.stopPropagation();
+          });
+        });
+
+        // Close the dropdown if clicking anywhere outside the dropdown
+        document.addEventListener('click', function () {
+          dropdowns.forEach(dropdown => {
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) menu.style.display = 'none';
+          });
+        });
+      });
+    </script>
+</body>
+</html>
+

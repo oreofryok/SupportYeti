@@ -1,0 +1,57 @@
+/* expertise.css */
+.support-yeti-expertise {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.expertise-outer {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.expertise-heading h4 {
+    color: #ff3131;
+    font-size: 18px;
+}
+
+.expertise-heading h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.expertise-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.expertise-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.expertise-item:hover {
+    transform: translateY(-10px);
+}
+
+.expertise-icon img {
+    max-width: 80px;
+    margin-bottom: 15px;
+}
+
+.expertise-title h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.expertise-description p {
+    color: #666;
+    font-size: 16px;
+}

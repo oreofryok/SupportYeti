@@ -1,0 +1,228 @@
+.page-center,
+.steps-slider-container {
+  position: relative;
+  width: 100%;
+  padding: 20px; /* Padding for consistent spacing */
+  box-sizing: border-box; /* Ensures padding is included in container size */
+}
+
+.page-center {
+  background-color: #f4f4f4;
+}
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.section-title h4 {
+  color: #ff3131;
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.section-title h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #003366;
+  margin-top: 0;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ff3131;
+  margin: 20px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.section-title h2:hover::after {
+  width: 80px;
+}
+
+/* Steps Container */
+.steps-slider-container {
+  position: relative;
+  width: 100%;
+  padding: 20px; /* Ensure consistent padding */
+}
+
+.steps h3 {
+  font-size: 24px;
+  color: #003366;
+  margin-bottom: 15px;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.steps p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+/* Vertical Slider (Divider) */
+.slider-line {
+  width: 4px;
+  height: 100%;
+  background-color: #ff3131;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 2px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Dot */
+.dot {
+  width: 24px;
+  height: 24px;
+  background-color: #ff3131;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  transition: top 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.dot:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.dot.active {
+  background-color: white;
+  border-color: #ff3131;
+}
+
+/* Steps */
+.step {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 45%;
+  opacity: 0;
+  transform: translateY(50px);
+  max-width: calc(100% - 40px); /* Respect container padding */
+  box-sizing: border-box; /* Ensure padding is included */
+}
+
+.step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-left {
+  margin-right: auto;
+}
+
+.step-right {
+  margin-left: auto;
+}
+
+/* Linear Gradient on Hover */
+.step:hover {
+  background: linear-gradient(135deg, rgba(255, 49, 49, 0.1), rgba(0, 51, 102, 0.1));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design Fixes */
+
+/* Media Query for 1024px */
+@media (max-width: 1024px) {
+  .steps-slider-container {
+    padding: 60px 20px;
+  }
+
+  .section-title h2 {
+    font-size: 40px;
+  }
+
+  .section-title h4 {
+    font-size: 24px;
+  }
+
+  .step {
+    width: 60%; /* Adjust step width for tablets */
+  }
+}
+
+/* Media Query for 768px */
+@media (max-width: 768px) {
+  .page-center,
+  .steps-slider-container {
+    padding: 40px 20px;
+  }
+
+  .section-title h2 {
+    font-size: 32px;
+  }
+
+  .section-title h4 {
+    font-size: 20px;
+  }
+
+  .step {
+    width: 100%; /* Full width for mobile */
+    margin: 10px 0; /* Stack steps vertically */
+    margin-left: 0; /* Reset left margin */
+    margin-right: 0; /* Reset right margin */
+    max-width: 100%; /* Ensure no overflow */
+  }
+
+  .slider-line,
+  .dot {
+    display: none; /* Hide the slider and dots on mobile */
+  }
+}
+
+/* Media Query for 480px */
+@media (max-width: 480px) {
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .section-title h4 {
+    font-size: 18px;
+  }
+
+  .step {
+    padding: 20px; /* Reduced padding for very small screens */
+  }
+
+  .steps-slider-container {
+    padding: 20px 10px; /* Reduce padding for small screens */
+  }
+
+  .steps h3 {
+    font-size: 20px; /* Smaller font size for headings */
+  }
+
+  .steps p {
+    font-size: 14px; /* Smaller font size for paragraphs */
+  }
+}

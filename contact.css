@@ -1,0 +1,229 @@
+/* Contact Section Styles */
+:root {
+  --primary-color: #ff3131;
+  --secondary-color: #003366;
+  --text-color: #555;
+  --background-light: #f4f4f4;
+  --background-white: #ffffff;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.page-center {
+  padding: clamp(2rem, 5vw, 4rem) 0; /* Responsive padding with clamp */
+}
+
+.banner-left-right-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+  gap: 2rem;
+}
+
+.left-sec {
+  width: min(40%, 500px); /* Limit width for better readability */
+  margin-left: clamp(2rem, 5vw, 5rem); /* Responsive margin */
+}
+
+.bnner-text {
+  text-align: left;
+}
+
+.bnner-text h4 {
+  color: var(--primary-color);
+  font-size: clamp(1.5rem, 3vw, 1.75rem); /* Fluid typography */
+  margin-bottom: 0.75rem;
+}
+
+.bnner-text h1 {
+  color: var(--secondary-color);
+  font-size: clamp(2rem, 5vw, 2.875rem); /* Fluid typography */
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.bnner-text p {
+  color: var(--text-color);
+  font-size: clamp(1rem, 2.5vw, 1.25rem); /* Fluid typography */
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.banner-cta {
+  margin-top: 1.5rem;
+}
+
+.right-sec {
+  width: min(45%, 600px); /* Limit width for better responsiveness */
+}
+
+.right-sec img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.right-sec img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Form Styles */
+.contact-section {
+  width: 100%;
+  background-color: var(--background-light);
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.contact-form-container {
+  max-width: min(90%, 800px); /* Responsive max-width */
+  margin: 0 auto;
+  background-color: var(--background-white);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.contact-form-container:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+form fieldset {
+  margin-bottom: 1.5rem;
+  border: none;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+  color: var(--secondary-color);
+  transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 49, 49, 0.1);
+  outline: none;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+select {
+  padding: 0.75rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23003366'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+/* Submit Button Styles */
+button.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+button.submit-btn:hover {
+  background-color: #e02a2a;
+  box-shadow: 0 4px 10px rgba(255, 49, 49, 0.5);
+  transform: translateY(-2px);
+}
+
+button.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Side-by-Side Fields */
+.flex-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.flex-row .form-field {
+  flex: 1;
+  max-width: 48%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner-left-right-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left-sec {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .right-sec {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .flex-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .flex-row .form-field {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .bnner-text h1 {
+    font-size: clamp(1.75rem, 6vw, 2rem); /* Adjust for smaller screens */
+  }
+
+  .bnner-text h4 {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+
+  .bnner-text p {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+  }
+}
